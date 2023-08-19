@@ -39,3 +39,32 @@ function calculateRectangleButton(){
     const areaSpan = document.getElementById('rectangle-area');
     areaSpan.innerText = area;
 }
+
+
+//Reusable Function --> reduce duplicate
+
+function calculateParallelogramButton(){
+    const base = getInputValue('parallelogram-base');
+    console.log(base);
+
+    const height = getInputValue('parallelogram-height');
+    console.log(height)
+
+    const area = base * height;
+    getElementInnerText('parallelogram-area', area);
+     
+}
+// reusable get input value field in number
+function getInputValue(fieldId){
+    const inputField = document.getElementById(fieldId);
+    const inputValueText = inputField.value;
+    const value = parseFloat(inputValueText);
+    return value
+
+}
+
+//reusable set, p, div etc text
+function getElementInnerText(elementId, area){
+    const element = document.getElementById(elementId);
+    element.innerText = area;
+}
