@@ -41,8 +41,15 @@ function calculateRectangleButton(){
 }
 
 
+
+
+
+
+
 //Reusable Function --> reduce duplicate
 
+
+//Parallelogram
 function calculateParallelogramButton(){
     const base = getInputValue('parallelogram-base');
     console.log(base);
@@ -51,9 +58,20 @@ function calculateParallelogramButton(){
     console.log(height)
 
     const area = base * height;
-    getElementInnerText('parallelogram-area', area);
+    setElementInnerText('parallelogram-area', area);
      
 }
+
+
+//Ellipse
+function calculateEllipseButton(){
+    const majorRadius = getInputValue('ellipse-major-radius');
+    const minorRadius = getInputValue('ellipse-minor-radius');
+    const area = 3.14 * majorRadius * minorRadius;
+    setElementInnerText('ellipse-area', area)
+    
+}
+
 // reusable get input value field in number
 function getInputValue(fieldId){
     const inputField = document.getElementById(fieldId);
@@ -64,7 +82,7 @@ function getInputValue(fieldId){
 }
 
 //reusable set, p, div etc text
-function getElementInnerText(elementId, area){
+function setElementInnerText(elementId, area){
     const element = document.getElementById(elementId);
     element.innerText = area;
 }
